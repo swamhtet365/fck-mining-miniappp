@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FCK Mining</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#10131d;color:white;font-family:Arial;padding:20px}
+header{text-align:center;font-size:23px;font-weight:bold;margin:15px}
+.card{background:#1d2433;border-radius:18px;padding:22px;margin:15px 0;text-align:center}
+.balance{font-size:38px;color:#38e69b;font-weight:bold;margin:15px}
+.rate{color:#aab5c9}
+button{width:100%;padding:17px;margin:7px 0;border:0;border-radius:13px;background:#27364b;color:white;font-size:16px;font-weight:bold}
+.mine{background:#10b981;color:#071b16;font-size:19px}
+button:active{opacity:.7}
+</style>
+</head>
+<body>
+<header>⛏ FCK MINING</header>
+
+<div class="card">
+<div>💰 YOUR BALANCE</div>
+<div class="balance" id="balance">0 FCK</div>
+<div class="rate">Mining Rate: 5 FCK / Minute</div>
+</div>
+
+<div class="card">
+<div>⚡ MINING STATUS</div>
+<h2 id="status">Ready to Mine</h2>
+<button class="mine" onclick="mine()">⛏ START MINING</button>
+</div>
+
+<button onclick="daily()">🎁 Daily Bonus</button>
+<button onclick="referral()">👥 Referral</button>
+<button onclick="withdraw()">💸 Withdraw</button>
+<button onclick="profile()">👤 My Profile</button>
+<button onclick="leaderboard()">🏆 Leaderboard</button>
+
+<script>
+const tg=window.Telegram.WebApp;
+tg.ready();
+tg.expand();
+
+function mine(){
+document.getElementById("status").innerText="Mining Started ⛏";
+tg.showAlert("Mining စတင်ရန် Bot Server နှင့် ချိတ်ဆက်ရန် လိုအပ်ပါသည်။");
+}
+function daily(){
+tg.showAlert("Daily Bonus ကို Bot Server နှင့် ချိတ်ဆက်ပြီးမှ ရယူနိုင်ပါမည်။");
+}
+function referral(){
+tg.showAlert("Referral စနစ်ကို ချိတ်ဆက်ရန် လိုအပ်ပါသည်။");
+}
+function withdraw(){
+tg.showAlert("Withdrawal စနစ်ကို ချိတ်ဆက်ရန် လိုအပ်ပါသည်။");
+}
+function profile(){
+tg.showAlert("My Profile");
+}
+function leaderboard(){
+tg.showAlert("Leaderboard စနစ်ကို ချိတ်ဆက်ရန် လိုအပ်ပါသည်။");
+}
+</script>
+</body>
+</html>
